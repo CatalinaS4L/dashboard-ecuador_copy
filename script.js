@@ -2,7 +2,6 @@
 // 1. ENLACES DIRECTOS A GOOGLE SHEETS ECUADOR
 // ==============================================
 const MONTH_URLS = {
-  marzo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQwIMNqHJXGVnh4-Bdyet4vnvKP1vSNTD0i46iq1xqFlkCejMoEbUETIn-qz6lV2cb5Y3hvQh0o01Ey/pub?gid=972956934&single=true&output=csv`,
   abril: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQwIMNqHJXGVnh4-Bdyet4vnvKP1vSNTD0i46iq1xqFlkCejMoEbUETIn-qz6lV2cb5Y3hvQh0o01Ey/pub?gid=1186598423&single=true&output=csv`,
   mayo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQwIMNqHJXGVnh4-Bdyet4vnvKP1vSNTD0i46iq1xqFlkCejMoEbUETIn-qz6lV2cb5Y3hvQh0o01Ey/pub?gid=931773328&single=true&output=csv`,
   junio: `https://docs.google.com/spreadsheets/d/e/2PACX-1vQwIMNqHJXGVnh4-Bdyet4vnvKP1vSNTD0i46iq1xqFlkCejMoEbUETIn-qz6lV2cb5Y3hvQh0o01Ey/pub?gid=1230562695&single=true&output=csv`,
