@@ -1943,7 +1943,59 @@ async function exportCurrentViewToPDF() {
                 return;
               }
 
-              // 2. Dibujar puntos de semáforo si existen en otras columnas
+              // 2. Dibujar celdas de Meses Activos con formato destacado (Active Month Badge)
+              if (data.cell._isActiveMonthCell) {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = rawHtml;
+
+                const parts = [];
+                tempDiv.childNodes.forEach(node => {
+                  if (node.nodeType === Node.TEXT_NODE) {
+                    if (node.textContent) parts.push({ text: node.textContent, isActive: false });
+                  } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const isActive = node.classList.contains('active-month-badge');
+                    parts.push({ text: node.textContent, isActive });
+                  }
+                });
+
+                doc.setFont(data.cell.styles.font || 'helvetica', 'normal');
+                doc.setFontSize(6.5);
+
+                let totalWidth = 0;
+                const partWidths = parts.map(p => {
+                  const tw = doc.getTextWidth(p.text);
+                  const w = p.isActive ? (tw + 3.5) : tw;
+                  totalWidth += w;
+                  return { tw, w };
+                });
+
+                let currentX = data.cell.x + Math.max(1, (data.cell.width - totalWidth) / 2);
+                const badgeHeight = 4.0;
+                const badgeY = data.cell.y + (data.cell.height - badgeHeight) / 2;
+
+                parts.forEach((p, idx) => {
+                  const pw = partWidths[idx];
+                  if (p.isActive) {
+                    doc.setFillColor(226, 232, 240);
+                    doc.setDrawColor(203, 213, 225);
+                    doc.setLineWidth(0.2);
+                    doc.roundedRect(currentX, badgeY, pw.w, badgeHeight, 1.2, 1.2, 'FD');
+
+                    doc.setFont(data.cell.styles.font || 'helvetica', 'bold');
+                    doc.setTextColor(30, 41, 59);
+                    doc.text(p.text, currentX + (pw.w / 2), badgeY + 2.9, { align: 'center' });
+                    currentX += pw.w;
+                  } else {
+                    doc.setFont(data.cell.styles.font || 'helvetica', 'normal');
+                    doc.setTextColor(71, 85, 105);
+                    doc.text(p.text, currentX, badgeY + 2.9);
+                    currentX += pw.w;
+                  }
+                });
+                return;
+              }
+
+              // 3. Dibujar puntos de semáforo (si aplican)
               let fillColor = null;
               if (rawHtml.includes('dot-green')) fillColor = [6, 183, 6];
               else if (rawHtml.includes('dot-yellow')) fillColor = [255, 185, 55];
