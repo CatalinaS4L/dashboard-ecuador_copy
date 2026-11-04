@@ -32,6 +32,7 @@ let onlyRegularPerformers = false;
 let sortState = {
   'agents-table': { column: null, isAsc: true },
   'focus-table': { column: null, isAsc: true },
+  'trainers-table': { column: null, isAsc: true },
   'supervisors-table': { column: null, isAsc: true },
   'coordinators-table': { column: null, isAsc: true },
   'diagnostic-table': { column: null, isAsc: true }
@@ -502,6 +503,8 @@ function handleSort(tableId, columnKey) {
     applyAgentSort('agents-table');
   } else if (tableId === 'focus-table') {
     renderFocusTable(filteredData);
+  } else if (tableId === 'trainers-table') {
+    renderGroupedTable(filteredData, 'TRAINER', '#trainers-table tbody', 'trainers-table');
   } else if (tableId === 'supervisors-table') {
     renderGroupedTable(filteredData, 'SUPERVISOR', '#supervisors-table tbody', 'supervisors-table');
   } else if (tableId === 'coordinators-table') {
