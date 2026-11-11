@@ -2,15 +2,16 @@
 // 1. ENLACES DIRECTOS A GOOGLE SHEETS ECUADOR
 // ==============================================
 const MONTH_URLS = {
-  febrero: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=0&single=true&output=csv`,
-  marzo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=972956934&single=true&output=csv`,
-  abril: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=1186598423&single=true&output=csv`,
-  mayo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=931773328&single=true&output=csv`,
-  junio: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=1230562695&single=true&output=csv`,
-  julio: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=1034655502&single=true&output=csv`,
-  agosto: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=833072153&single=true&output=csv`,
-  septiembre: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=1748535358&single=true&output=csv`,
-  octubre: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQSOQez8QahZZaVSPTXSTJZSNi8DC3mGSEL4AAdlzIpj169XVFi_AuVpUJ5uQJpmZ4weWLyAPzazh/pub?gid=125581480&single=true&output=csv`
+  febrero: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=0&single=true&output=csv`,
+  marzo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=972956934&single=true&output=csv`,
+  abril: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=1186598423&single=true&output=csv`,
+  mayo: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=931773328&single=true&output=csv`,
+  junio: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=1230562695&single=true&output=csv`,
+  julio: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=1034655502&single=true&output=csv`,
+  agosto: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=833072153&single=true&output=csv`,
+  septiembre: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=1748535358&single=true&output=csv`,
+  octubre: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=125581480&single=true&output=csv`,
+  noviembre: `https://docs.google.com/spreadsheets/d/e/2PACX-1vSrGlbC3a2uP5hbhEuyKL-kGg70o_2MVgStUwVB7KxR2ZEXtmG3eL21KgPVnAS6dMVBRd-B4tp6D_Zj/pub?gid=987312697&single=true&output=csv`
 };
 
 const SUPERVISOR_COLORS = [
